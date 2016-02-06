@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ISO Timestamp</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body, main {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+    }
+    output {
+      font-size: 6em;
+      font-weight: bold;
+    }
+    button {
+      margin: 16px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <output id="timestamp"></output>
+    <button type="button" id="refresh">Refresh</button>
+  </main>
+  <script>
+    var tsOut = document.getElementById('timestamp');
+    function setTimestamp() {
+      return tsOut.textContent = new Date().toISOString();
+    }
+    setTimestamp();
+    document.getElementById('refresh').addEventListener('click', setTimestamp);
+  </script>
+</body>
+</html>
